@@ -112,6 +112,13 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 @media(max-width:980px){.pd,.split,.co,.ct{grid-template-columns:1fr}.buy,.sum{position:static}.cols{grid-template-columns:1fr}.col{border-right:0;border-bottom:1px solid var(--line)}.col:last-child{border:0}}
 @media(max-width:820px){.nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;padding:20px 24px;gap:16px;margin:0}.nav ul.open{display:flex}.burger{display:block}.nav .btn{display:none}}
 @media(max-width:520px){.g2{grid-template-columns:1fr}.thumbs{grid-template-columns:repeat(5,1fr);gap:6px}}
+.cb{padding:26px 32px 34px}
+#stSum{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}
+.po{display:flex;width:100%;gap:16px;align-items:center;text-align:left;padding:18px 20px;border:1px solid var(--line);background:#fff;margin-bottom:10px;transition:border-color .2s}
+.po:hover{border-color:var(--ink)}.po b{font-weight:600}.po small{display:block;color:var(--muted);font-size:.82rem}
+.bk{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:.88rem;margin-top:18px}
+.okb{text-align:center}.okb h3{font-size:1.8rem;margin-bottom:8px}.okb p{color:var(--muted);margin:6px 0}.okb .btn{margin-top:22px}
+.ok-ic{width:96px;height:96px;display:block;margin:6px auto 20px}
 </style>
 </head>
 <body id="top">
@@ -136,7 +143,7 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 <header class="site"><div class="wrap nav">
   <a class="brand" href="#top">Hundestark</a>
   <ul id="menu"><li><a href="#produkt">Produkt</a></li><li><a href="#versand">Versand &amp; Zahlung</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
-  <a class="btn btn-p" href="#bestellung"><svg class="ic"><use href="#i-bag"/></svg>Bestellen</a>
+  <button type="button" class="btn btn-p" data-order><svg class="ic"><use href="#i-bag"/></svg>Bestellen</button>
   <button class="burger" id="burger" aria-label="Menü"><svg class="ic"><use href="#i-menu"/></svg></button>
 </div></header>
 
@@ -145,7 +152,7 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
   <span class="eyebrow" style="color:#e9a35c">Hundestark</span>
   <h1 id="hTag"></h1>
   <p>Die Futterente macht aus der Mahlzeit ein Spiel. Der Hund drückt, dreht und holt sich sein Futter selbst.</p>
-  <div class="cta"><a class="btn btn-p" href="#produkt">Zum Produkt</a><a class="btn btn-o" href="#bestellung">Direkt bestellen</a></div>
+  <div class="cta"><a class="btn btn-p" href="#produkt">Zum Produkt</a><button type="button" class="btn btn-o" data-order>Direkt bestellen</button></div>
 </div></div>
 
 <section id="produkt"><div class="wrap pd">
@@ -158,7 +165,7 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
     <p class="short" id="pShort"></p>
     <div id="varBox" class="sel" hidden><label class="f" id="varLbl" for="varSel"></label><select id="varSel"></select></div>
     <div class="row"><div class="qty" data-q><button type="button" data-d="-1" aria-label="Weniger"><svg class="ic"><use href="#i-minus"/></svg></button><span data-qv>1</span><button type="button" data-d="1" aria-label="Mehr"><svg class="ic"><use href="#i-plus"/></svg></button></div>
-    <a class="btn btn-p" href="#bestellung"><svg class="ic"><use href="#i-bag"/></svg>Jetzt bestellen</a></div>
+    <button type="button" class="btn btn-p" data-order><svg class="ic"><use href="#i-bag"/></svg>Jetzt bestellen</button></div>
     <ul class="facts">
       <li><svg class="ic"><use href="#i-truck"/></svg>Versand 2,99 € innerhalb Deutschlands</li>
       <li><svg class="ic"><use href="#i-receipt"/></svg>Bezahlung auf Rechnung möglich</li>
@@ -177,55 +184,13 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 
 <section id="versand" style="padding-block:0"><div class="wrap"><div class="cols">
   <div class="col rv"><svg class="ic"><use href="#i-truck"/></svg><h3>Versand</h3><p>Pauschal 2,99 € innerhalb Deutschlands. Sie erhalten eine Versandbestätigung per E-Mail.</p></div>
-  <div class="col rv"><svg class="ic"><use href="#i-wallet"/></svg><h3>Zahlung</h3><p>Auf Rechnung, per PayPal oder per Vorkasse. Sie wählen im Bestellformular.</p></div>
+  <div class="col rv"><svg class="ic"><use href="#i-wallet"/></svg><h3>Zahlung</h3><p>Auf Rechnung, per PayPal oder per Vorkasse. Sie wählen direkt beim Bestellen.</p></div>
   <div class="col rv"><svg class="ic"><use href="#i-shield"/></svg><h3>Widerruf</h3><p>14 Tage Widerrufsrecht. Die Details stehen in der <button class="lnk" data-open="wid">Widerrufsbelehrung</button>.</p></div>
 </div></div></section>
 
-<section id="bestellung"><div class="wrap">
-  <div class="rv"><span class="eyebrow">Bestellung</span><h2>Jetzt bestellen</h2><p style="color:var(--muted)">Ohne Kundenkonto. Sie prüfen alles, bevor Sie verbindlich bestellen.</p></div>
-  <div class="co" id="co">
-    <form id="orderForm">
-      <fieldset><legend>Kontakt &amp; Adresse</legend><div class="g2">
-        <div><label class="f" for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" autocomplete="given-name" required></div>
-        <div><label class="f" for="nachname">Nachname</label><input type="text" id="nachname" name="nachname" autocomplete="family-name" required></div>
-        <div><label class="f" for="email">E-Mail</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-        <div><label class="f" for="telefon">Telefon (optional)</label><input type="tel" id="telefon" name="telefon" autocomplete="tel"></div>
-        <div class="full"><label class="f" for="strasse">Straße und Hausnummer</label><input type="text" id="strasse" name="strasse" autocomplete="street-address" required></div>
-        <div><label class="f" for="plz">PLZ</label><input type="text" id="plz" name="plz" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" required></div>
-        <div><label class="f" for="ort">Ort</label><input type="text" id="ort" name="ort" autocomplete="address-level2" required></div>
-        <div class="full"><label class="chk" style="margin:4px 0 0"><input type="checkbox" id="abw"> Abweichende Lieferadresse</label></div>
-      </div>
-      <div class="g2" id="lief" hidden style="margin-top:14px">
-        <div class="full"><label class="f" for="l_name">Name</label><input type="text" id="l_name" name="l_name"></div>
-        <div class="full"><label class="f" for="l_strasse">Straße und Hausnummer</label><input type="text" id="l_strasse" name="l_strasse"></div>
-        <div><label class="f" for="l_plz">PLZ</label><input type="text" id="l_plz" name="l_plz" inputmode="numeric" pattern="[0-9]{5}"></div>
-        <div><label class="f" for="l_ort">Ort</label><input type="text" id="l_ort" name="l_ort"></div>
-      </div></fieldset>
-      <fieldset><legend>Zahlungsart</legend>
-        <label class="pay"><input type="radio" name="zahlung" value="Rechnung" checked><span class="pb"><svg class="ic"><use href="#i-receipt"/></svg><span><b>Auf Rechnung</b><small>Sie zahlen nach Erhalt der Rechnung per Überweisung</small></span></span></label>
-        <label class="pay"><input type="radio" name="zahlung" value="PayPal"><span class="pb"><svg class="ic"><use href="#i-wallet"/></svg><span><b>PayPal</b><small>Sie erhalten nach der Bestellung den Zahlungslink</small></span></span></label>
-        <label class="pay"><input type="radio" name="zahlung" value="Vorkasse"><span class="pb"><svg class="ic"><use href="#i-bank"/></svg><span><b>Vorkasse (Überweisung)</b><small>Versand nach Zahlungseingang</small></span></span></label>
-      </fieldset>
-      <fieldset><legend>Anmerkung</legend><textarea name="nachricht" rows="3" aria-label="Anmerkung zur Bestellung"></textarea></fieldset>
-      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <label class="chk"><input type="checkbox" name="zustimmung" required><span>Ich habe die <button type="button" class="lnk" data-open="wid">Widerrufsbelehrung</button> und die <button type="button" class="lnk" data-open="ds">Datenschutzerklärung</button> gelesen.</span></label>
-      <p class="err" id="err" hidden></p>
-      <button class="btn btn-p" id="sendBtn" type="submit" style="width:100%;margin-top:10px"><svg class="ic"><use href="#i-check"/></svg>Zahlungspflichtig bestellen</button>
-    </form>
-    <aside class="sum"><h3>Ihre Bestellung</h3>
-      <div class="sl"><div class="t" id="sImg"></div><div><b id="sName"></b><div class="qty" data-q><button type="button" data-d="-1" aria-label="Weniger"><svg class="ic"><use href="#i-minus"/></svg></button><span data-qv>1</span><button type="button" data-d="1" aria-label="Mehr"><svg class="ic"><use href="#i-plus"/></svg></button></div></div><div id="sLine"></div></div>
-      <div class="sr"><span>Zwischensumme</span><span id="sSub"></span></div>
-      <div class="sr"><span>Versand</span><span id="sShip"></span></div>
-      <div class="sr tot"><span>Gesamt</span><span id="sTot"></span></div>
-      <p class="note">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
-    </aside>
-  </div>
-  <div class="done" id="done" hidden></div>
-</div></section>
-
 <section id="faq" class="alt"><div class="wrap faq">
   <span class="eyebrow">Fragen</span><h2>Häufige Fragen</h2>
-  <details><summary>Wie läuft die Bestellung ab?</summary><p>Sie füllen das Bestellformular aus und wählen die Zahlungsart. Danach erhalten Sie eine Bestätigung mit allen Angaben zur Zahlung.</p></details>
+  <details><summary>Wie läuft die Bestellung ab?</summary><p>Ein Klick auf „Jetzt bestellen“ genügt. Sie wählen die Zahlungsart: Mit PayPal ist die Bestellung sofort bezahlt, bei Rechnung oder Vorkasse geben Sie nur kurz Ihre Adresse an.</p></details>
   <details><summary>Wann wird geliefert?</summary><p>Bei Rechnung und PayPal versenden wir nach der Bestätigung, bei Vorkasse nach Zahlungseingang. Den Versandtermin teilen wir Ihnen per E-Mail mit.</p></details>
   <details><summary>Welches Futter passt in die Futterente?</summary><p>Trockenfutter und kleine Leckerlis. Das Futter muss so klein sein, dass es durch die Öffnung der Kammer fällt.</p></details>
   <details><summary>Kann ich die Bestellung zurückgeben?</summary><p>Ja, Sie haben 14 Tage Widerrufsrecht. Die Einzelheiten stehen in der Widerrufsbelehrung.</p></details>
@@ -244,6 +209,29 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
   <small>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Versand 2,99 €. © 2026 Andy Reiter</small>
 </div></footer>
 
+<dialog id="co"><div class="dh"><h2 id="coTitle">Zahlungsart wählen</h2><button data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button></div><div class="cb">
+  <div id="stSum"></div>
+  <div id="s1">
+    <button type="button" class="po" data-pay="paypal"><svg class="ic"><use href="#i-wallet"/></svg><span><b>PayPal</b><small>Sofort bezahlen, Adresse aus Ihrem PayPal-Konto</small></span></button>
+    <button type="button" class="po" data-pay="Rechnung"><svg class="ic"><use href="#i-receipt"/></svg><span><b>Auf Rechnung</b><small>Zahlung nach Erhalt der Rechnung</small></span></button>
+    <button type="button" class="po" data-pay="Vorkasse"><svg class="ic"><use href="#i-bank"/></svg><span><b>Vorkasse (Überweisung)</b><small>Versand nach Zahlungseingang</small></span></button>
+  </div>
+  <div id="s2" hidden><p class="note" style="margin:0 0 16px">Mit Klick auf die PayPal-Schaltfläche bestellen Sie zahlungspflichtig. Es gelten die <button type="button" class="lnk" data-open="wid">Widerrufsbelehrung</button> und die <button type="button" class="lnk" data-open="ds">Datenschutzerklärung</button>.</p><div id="ppBtn"></div><p class="err" id="ppErr" hidden></p><button type="button" class="bk" data-back>Zahlungsart ändern</button></div>
+  <div id="s3" hidden><form id="orderForm"><div class="g2">
+    <div><label class="f" for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" autocomplete="given-name" required></div>
+    <div><label class="f" for="nachname">Nachname</label><input type="text" id="nachname" name="nachname" autocomplete="family-name" required></div>
+    <div class="full"><label class="f" for="email">E-Mail</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+    <div class="full"><label class="f" for="strasse">Straße und Hausnummer</label><input type="text" id="strasse" name="strasse" autocomplete="street-address" required></div>
+    <div><label class="f" for="plz">PLZ</label><input type="text" id="plz" name="plz" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" required></div>
+    <div><label class="f" for="ort">Ort</label><input type="text" id="ort" name="ort" autocomplete="address-level2" required></div></div>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="err" id="err" hidden style="margin-top:14px"></p>
+    <button class="btn btn-p" id="sendBtn" type="submit" style="width:100%;margin-top:22px">Zahlungspflichtig bestellen</button>
+    <p class="note">Mit der Bestellung gelten die <button type="button" class="lnk" data-open="wid">Widerrufsbelehrung</button> und die <button type="button" class="lnk" data-open="ds">Datenschutzerklärung</button>.</p>
+    <button type="button" class="bk" data-back>Zahlungsart ändern</button></form></div>
+  <div id="s4" class="okb" hidden><svg class="ok-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2f8f4e"/><path d="M6.8 12.6l3.5 3.5 6.9-7.4" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Ihre Bestellung ist eingegangen.</h3><div id="okTxt"></div><button type="button" class="btn btn-p" data-close>Schließen</button></div>
+</div></dialog>
+
 <dialog id="imp"><div class="dh"><h2>Impressum</h2><button data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button></div><div class="lb">
 <h3>Angaben gemäß § 5 DDG</h3><p>Andy Reiter<br>Heinrich-von-Kleist-Straße 5<br>67374 Hanhofen<br>Deutschland</p>
 <h3>Kontakt</h3><p>Telefon: <a href="tel:+4917641997772">+49 176 4199 7772</a><br>E-Mail: <a href="mailto:andy@reiterweddings.de">andy@reiterweddings.de</a></p>
@@ -257,7 +245,7 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 
 <dialog id="ds"><div class="dh"><h2>Datenschutz</h2><button data-close aria-label="Schließen"><svg class="ic"><use href="#i-x"/></svg></button></div><div class="lb">
 <h3>Verantwortlicher</h3><p>Andy Reiter, Heinrich-von-Kleist-Straße 5, 67374 Hanhofen, andy@reiterweddings.de</p>
-<h3>Bestellabwicklung</h3><p>Zur Abwicklung Ihrer Bestellung verarbeite ich Name, Anschrift, E-Mail, optional Telefonnummer, Bestelldaten und Zahlungsart (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden nur an Versand- und, bei Wahl von PayPal, an Zahlungsdienstleister weitergegeben, soweit dies zur Erfüllung nötig ist. Aufbewahrungsfristen nach Handels- und Steuerrecht bleiben unberührt.</p>
+<h3>Bestellabwicklung</h3><p>Zur Abwicklung Ihrer Bestellung verarbeite ich Name, Anschrift, E-Mail, Bestelldaten und Zahlungsart (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden nur an Versand- und, bei Wahl von PayPal, an Zahlungsdienstleister weitergegeben, soweit dies zur Erfüllung nötig ist. Aufbewahrungsfristen nach Handels- und Steuerrecht bleiben unberührt.</p>
 <h3>Kontaktaufnahme</h3><p>Bei Anfragen per E-Mail oder Telefon verarbeite ich Ihre Angaben zur Bearbeitung der Anfrage.</p>
 <h3>Schriftarten</h3><p>Diese Seite lädt Schriftarten von Google Fonts. Dabei wird Ihre IP-Adresse an Server von Google übertragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h3>Ihre Rechte</h3><p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit sowie auf Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
@@ -275,9 +263,9 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 /* ===== KONFIGURATION ===== */
 const CONFIG={
   SHIPPING:2.99, MAX_QTY:10,
+  PAYPAL_CLIENT_ID:"",            // Live-Client-ID aus developer.paypal.com. Leer = PayPal-Option wird ausgeblendet
   ORDER_ENDPOINT:"",              // z. B. "https://formspree.io/f/XXXX" – leer = Bestellung wird per E-Mail-Programm vorbereitet
   ORDER_EMAIL:"andy@reiterweddings.de",
-  PAYPAL_ME:"",                   // z. B. "AndyReiter" → Zahlungslink mit Betrag nach der Bestellung
   IBAN:"", ACCOUNT_HOLDER:"Andy Reiter", PAYMENT_DAYS:14
 };
 const PRODUCT={
@@ -305,7 +293,7 @@ function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clea
 /* Produkt rendern */
 document.title=PRODUCT.name+" – Hundestark";
 $("#hTag").textContent=PRODUCT.tagline;$("#pName").textContent=PRODUCT.name;$("#pShort").textContent=PRODUCT.short;$("#pPrice").textContent=eur(PRODUCT.price);
-$("#sName").textContent=PRODUCT.name;$("#sImg").innerHTML=img(PRODUCT.images[0],PRODUCT.name);
+
 function showImg(i){$("#gMain").innerHTML=img(PRODUCT.images[i],PRODUCT.name+" – Bild "+(i+1));$$("#thumbs button").forEach((b,j)=>b.setAttribute("aria-current",j===i))}
 $("#thumbs").innerHTML=PRODUCT.images.map((s,i)=>`<button type="button" aria-label="Bild ${i+1} anzeigen">${img(s,"")}</button>`).join("");
 $$("#thumbs button").forEach((b,i)=>b.onclick=()=>showImg(i));showImg(0);
@@ -314,11 +302,10 @@ if(PRODUCT.variants.length){$("#varBox").hidden=false;$("#varLbl").textContent=P
   $("#varSel").onchange=update}
 const variant=()=>PRODUCT.variants.length?$("#varSel").value:"";
 
-/* Menge &amp; Summen */
-function totals(){const sub=PRODUCT.price*qty;return{sub,ship:CONFIG.SHIPPING,total:sub+CONFIG.SHIPPING}}
-function update(){const t=totals();$$("[data-qv]").forEach(e=>e.textContent=qty);
-  $("#sLine").textContent=eur(t.sub);$("#sSub").textContent=eur(t.sub);$("#sShip").textContent=eur(t.ship);$("#sTot").textContent=eur(t.total);
-  $("#sName").textContent=PRODUCT.name+(variant()?" ("+variant()+")":"")}
+/* Menge */
+const totals=()=>{const sub=PRODUCT.price*qty;return{sub,ship:CONFIG.SHIPPING,total:sub+CONFIG.SHIPPING}};
+const prodLabel=()=>PRODUCT.name+(variant()?" ("+variant()+")":"");
+function update(){$$("[data-qv]").forEach(e=>e.textContent=qty)}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-q] button");if(!b)return;
   qty=Math.min(CONFIG.MAX_QTY,Math.max(1,qty+Number(b.dataset.d)));update()});
 update();
@@ -328,41 +315,64 @@ $$("[data-open]").forEach(b=>b.onclick=()=>$("#"+b.dataset.open).showModal());
 $$("[data-close]").forEach(b=>b.onclick=()=>b.closest("dialog").close());
 $$("dialog").forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close()}));
 
-/* Lieferadresse */
-$("#abw").onchange=e=>{const on=e.target.checked;$("#lief").hidden=!on;["l_name","l_strasse","l_plz","l_ort"].forEach(id=>$("#"+id).required=on)};
+/* Bestellfluss */
+const TITLES={s1:"Zahlungsart wählen",s2:"Mit PayPal bezahlen",s3:"Ihre Daten",s4:"Bestellung"};
+function go(id){["s1","s2","s3","s4"].forEach(x=>$("#"+x).hidden=x!==id);$("#stSum").hidden=id==="s4";$("#coTitle").textContent=TITLES[id]}
+function renderSum(){const t=totals();$("#stSum").innerHTML=`<div class="sr"><span>${esc(prodLabel())} × ${qty}</span><span>${eur(t.sub)}</span></div><div class="sr"><span>Versand</span><span>${eur(t.ship)}</span></div><div class="sr tot"><span>Gesamt</span><span>${eur(t.total)}</span></div>`}
+function openOrder(){renderSum();go("s1");$("#ppBtn").innerHTML="";$("#co").showModal()}
+$$("[data-order]").forEach(b=>b.onclick=openOrder);
+$$("[data-back]").forEach(b=>b.onclick=()=>go("s1"));
+if(!CONFIG.PAYPAL_CLIENT_ID)$('[data-pay="paypal"]').hidden=true;
+let method="";
+$$("[data-pay]").forEach(b=>b.onclick=()=>{method=b.dataset.pay;method==="paypal"?showPayPal():go("s3")});
 
-/* Bestellung */
+/* PayPal: direkte Zahlung, Adresse kommt aus dem PayPal-Konto */
+let ppLoad;
+const loadPP=()=>ppLoad||(ppLoad=new Promise((ok,no)=>{const s=document.createElement("script");
+  s.src="https://www.paypal.com/sdk/js?client-id="+encodeURIComponent(CONFIG.PAYPAL_CLIENT_ID)+"&currency=EUR&locale=de_DE&components=buttons";
+  s.onload=ok;s.onerror=()=>{ppLoad=null;no()};document.head.appendChild(s)}));
+async function showPayPal(){
+  go("s2");const box=$("#ppBtn"),pe=$("#ppErr");box.innerHTML="";pe.hidden=true;
+  try{await loadPP()}catch(x){pe.textContent="PayPal konnte nicht geladen werden. Bitte wählen Sie eine andere Zahlungsart.";pe.hidden=false;return}
+  const t=totals(),m=n=>n.toFixed(2);
+  paypal.Buttons({style:{layout:"vertical",color:"gold",shape:"rect",label:"pay"},
+    createOrder:(d,a)=>a.order.create({purchase_units:[{description:prodLabel()+" × "+qty,
+      amount:{currency_code:"EUR",value:m(t.total),breakdown:{item_total:{currency_code:"EUR",value:m(t.sub)},shipping:{currency_code:"EUR",value:m(t.ship)}}},
+      items:[{name:prodLabel(),quantity:String(qty),category:"PHYSICAL_GOODS",unit_amount:{currency_code:"EUR",value:m(PRODUCT.price)}}]}],
+      application_context:{shipping_preference:"GET_FROM_FILE"}}),
+    onApprove:async(d,a)=>{
+      const r=await a.order.capture(),pu=r.purchase_units&&r.purchase_units[0],sh=pu&&pu.shipping&&pu.shipping.address,p=r.payer||{};
+      const o={bestellnummer:r.id,produkt:prodLabel(),menge:qty,gesamt:eur(t.total),zahlungsart:"PayPal (bezahlt)",
+        name:p.name?p.name.given_name+" "+p.name.surname:"-",email:p.email_address||"-",
+        lieferadresse:sh?[pu.shipping.name&&pu.shipping.name.full_name,sh.address_line_1,sh.address_line_2,sh.postal_code+" "+sh.admin_area_2,sh.country_code].filter(Boolean).join(", "):"laut PayPal"};
+      if(CONFIG.ORDER_ENDPOINT){try{await fetch(CONFIG.ORDER_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(o)})}catch(x){}}
+      finish(o,"PayPal",o.email,false)},
+    onError:()=>{pe.textContent="Die Zahlung hat nicht geklappt. Bitte versuchen Sie es erneut oder wählen Sie eine andere Zahlungsart.";pe.hidden=false}
+  }).render("#ppBtn");
+}
+
+/* Rechnung / Vorkasse: Minimal-Formular */
 $("#orderForm").addEventListener("submit",async e=>{
-  e.preventDefault();const f=e.target,err=$("#err");err.hidden=true;
-  if(f.website.value)return;
-  const d=Object.fromEntries(new FormData(f));const t=totals();
+  e.preventDefault();const f=e.target,err=$("#err");err.hidden=true;if(f.website.value)return;
+  const d=Object.fromEntries(new FormData(f)),t=totals();
   const nr="HS-"+new Date().toISOString().slice(2,10).replace(/-/g,"")+"-"+Math.floor(1000+Math.random()*9000);
-  const liefer=f.abw.checked?`${d.l_name}, ${d.l_strasse}, ${d.l_plz} ${d.l_ort}`:`${d.vorname} ${d.nachname}, ${d.strasse}, ${d.plz} ${d.ort}`;
-  const order={bestellnummer:nr,produkt:PRODUCT.name+(variant()?" ("+variant()+")":""),menge:qty,zwischensumme:eur(t.sub),versand:eur(t.ship),gesamt:eur(t.total),zahlungsart:d.zahlung,
-    name:d.vorname+" "+d.nachname,email:d.email,telefon:d.telefon||"-",rechnungsadresse:`${d.strasse}, ${d.plz} ${d.ort}`,lieferadresse:liefer,anmerkung:d.nachricht||"-"};
+  const o={bestellnummer:nr,produkt:prodLabel(),menge:qty,zwischensumme:eur(t.sub),versand:eur(t.ship),gesamt:eur(t.total),zahlungsart:method,
+    name:d.vorname+" "+d.nachname,email:d.email,lieferadresse:`${d.strasse}, ${d.plz} ${d.ort}`};
   const btn=$("#sendBtn");btn.disabled=true;let mail=false;
   try{
-    if(CONFIG.ORDER_ENDPOINT){
-      const r=await fetch(CONFIG.ORDER_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(order)});
-      if(!r.ok)throw new Error("send");
-    }else{
-      const body=Object.entries(order).map(([k,v])=>k+": "+v).join("\n");
-      location.href=`mailto:${CONFIG.ORDER_EMAIL}?subject=${encodeURIComponent("Bestellung "+nr)}&body=${encodeURIComponent(body)}`;mail=true;
-    }
+    if(CONFIG.ORDER_ENDPOINT){const r=await fetch(CONFIG.ORDER_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(o)});if(!r.ok)throw 0}
+    else{location.href=`mailto:${CONFIG.ORDER_EMAIL}?subject=${encodeURIComponent("Bestellung "+nr)}&body=${encodeURIComponent(Object.entries(o).map(([k,v])=>k+": "+v).join("\n"))}`;mail=true}
   }catch(x){err.textContent="Die Bestellung konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an "+CONFIG.ORDER_EMAIL+".";err.hidden=false;btn.disabled=false;return}
-  finish(order,t,d,mail);
+  btn.disabled=false;f.reset();finish(o,method,d.email,mail);
 });
-function finish(o,t,d,mail){
-  let pay="";
-  if(d.zahlung==="Rechnung")pay=`<p>Die Rechnung senden wir an ${esc(d.email)}. Zahlungsziel: ${CONFIG.PAYMENT_DAYS} Tage.</p>`;
-  if(d.zahlung==="PayPal")pay=CONFIG.PAYPAL_ME?`<p>Bitte bezahlen Sie ${eur(t.total)} per PayPal.</p><a class="btn btn-p" target="_blank" rel="noopener" href="https://www.paypal.me/${encodeURIComponent(CONFIG.PAYPAL_ME)}/${t.total.toFixed(2)}EUR">Mit PayPal bezahlen</a>`:`<p>Den PayPal-Zahlungslink senden wir an ${esc(d.email)}.</p>`;
-  if(d.zahlung==="Vorkasse")pay=CONFIG.IBAN?`<p>Bitte überweisen Sie ${eur(t.total)} an ${esc(CONFIG.ACCOUNT_HOLDER)}, IBAN ${esc(CONFIG.IBAN)}, Verwendungszweck ${o.bestellnummer}.</p>`:`<p>Die Bankverbindung senden wir an ${esc(d.email)}.</p>`;
-  $("#co").hidden=true;const dn=$("#done");dn.hidden=false;
-  dn.innerHTML=`<svg class="ic"><use href="#i-check"/></svg><h2 style="margin-top:0">Vielen Dank für Ihre Bestellung.</h2>
-   <p>Bestellnummer <b>${o.bestellnummer}</b> · ${o.menge} × ${esc(o.produkt)} · Gesamt ${o.gesamt}</p>${pay}
-   ${mail?`<p><b>Wichtig:</b> Ihr E-Mail-Programm wurde mit der Bestellung geöffnet. Bitte senden Sie die Nachricht ab, damit sie bei uns eingeht.</p>`:`<p>Eine Bestätigung erhalten Sie in Kürze per E-Mail.</p>`}
-   <button class="btn btn-p" onclick="location.reload()">Zurück zur Seite</button>`;
-  dn.scrollIntoView({behavior:"smooth",block:"center"});
+
+function finish(o,m,email,mail){
+  const t=totals();let txt=`<p>Bestellnummer <b>${esc(o.bestellnummer)}</b></p>`;
+  if(m==="PayPal")txt+=`<p>Ihre Zahlung ist eingegangen. Ihre Bestellung geht jetzt auf den Weg.</p>`;
+  if(m==="Rechnung")txt+=`<p>Die Rechnung senden wir an ${esc(email)}. Zahlungsziel: ${CONFIG.PAYMENT_DAYS} Tage.</p>`;
+  if(m==="Vorkasse")txt+=CONFIG.IBAN?`<p>Bitte überweisen Sie ${eur(t.total)} an ${esc(CONFIG.ACCOUNT_HOLDER)}, IBAN ${esc(CONFIG.IBAN)}, Verwendungszweck ${esc(o.bestellnummer)}.</p>`:`<p>Die Bankverbindung senden wir an ${esc(email)}.</p>`;
+  if(mail)txt+=`<p><b>Wichtig:</b> Ihr E-Mail-Programm wurde mit der Bestellung geöffnet. Bitte senden Sie die Nachricht ab.</p>`;
+  $("#okTxt").innerHTML=txt;go("s4");
 }
 
 /* Navigation &amp; Animation */
