@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hundestark – Hundespielzeug vom Nordenbroker Hof</title>
+<meta name="description" content="Hundespielzeug vom Nordenbroker Hof in Emstek: von Amy und Antje auf dem Hof getestet. Bestellen Sie direkt und unkompliziert per WhatsApp.">
+<meta name="theme-color" content="#1c231f">
+<meta property="og:title" content="Hundestark – Hundespielzeug vom Nordenbroker Hof">
+<meta property="og:description" content="Auf dem Hof getestet, direkt per WhatsApp bestellbar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nordenbrokerhof.de/img/og-image-4.jpg">
+<link rel="icon" href="https://nordenbrokerhof.de/img/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c231f;
+  --ink-2:#2b352f;
+  --moss:#3b5744;
+  --cream:#f6f1e6;
+  --paper:#fbf8f1;
+  --amber:#d8832f;
+  --amber-d:#b96a1d;
+  --line:rgba(28,35,31,.14);
+  --muted:#5d6760;
+  --radius:18px;
+  --shadow:0 18px 40px -22px rgba(28,35,31,.45);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--amber);color:#fff;padding:10px 16px;border-radius:8px;z-index:200}
+.skip:focus{left:8px}
+
+/* Ankündigungsleiste */
+.announce{background:var(--moss);color:#eaf1ea;font-size:.85rem;text-align:center;padding:8px 16px}
+.announce strong{color:#fff}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(28,35,31,.96);backdrop-filter:blur(10px);color:#f3efe4}
+.nav{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:48px;width:auto}
+.brand span{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.01em}
+.nav ul{display:flex;gap:22px;list-style:none;margin-left:auto}
+.nav ul a{text-decoration:none;font-size:.93rem;font-weight:500;opacity:.85;transition:opacity .2s}
+.nav ul a:hover{opacity:1}
+.cart-btn{display:flex;align-items:center;gap:8px;background:var(--amber);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:.93rem;transition:background .2s,transform .2s}
+.cart-btn:hover{background:var(--amber-d)}
+.cart-btn .count{background:#fff;color:var(--amber-d);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.78rem;padding:0 6px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;margin-left:auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 28px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--amber);color:#fff;box-shadow:0 12px 26px -12px rgba(216,131,47,.8)}
+.btn-primary:hover{background:var(--amber-d)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-wa{background:#25d366;color:#08320f}
+.btn-wa:hover{background:#1fbd5a}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:url("https://nordenbrokerhof.de/img/hero-poster-1019.webp") center/cover;opacity:.42;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,35,31,.92) 0%,rgba(28,35,31,.55) 55%,rgba(28,35,31,.25) 100%);z-index:-1}
+.hero .wrap{padding:clamp(70px,11vw,150px) 0 clamp(80px,12vw,160px)}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin:16px 0 20px;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:52ch;opacity:.92}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero .proof{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;font-size:.92rem;opacity:.9}
+.hero .proof span::before{content:"✓";color:var(--amber);font-weight:700;margin-right:8px}
+
+/* Zahlenleiste */
+.stats{background:var(--ink-2);color:#f3efe4}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:26px 0}
+.stat{text-align:center;padding:6px 8px}
+.stat b{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--amber)}
+.stat span{font-size:.88rem;opacity:.85}
+
+/* Abschnitte */
+section{padding:clamp(64px,9vw,112px) 0}
+.sec-head{max-width:720px;margin-bottom:44px}
+.sec-head.center{margin-inline:auto;text-align:center}
+h2{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;margin:10px 0 14px}
+.sec-head p{color:var(--muted);font-size:1.08rem}
+.alt{background:var(--paper)}
+.dark{background:var(--ink);color:#f3efe4}
+.dark .sec-head p{color:rgba(243,239,228,.75)}
+
+/* Philosophie */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,6vw,80px);align-items:center}
+.split p{color:var(--muted);margin-bottom:16px;font-size:1.06rem}
+.split .img{position:relative}
+.split .img img.main{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.split .img img.float{position:absolute;right:-18px;bottom:-24px;width:42%;border-radius:14px;border:6px solid var(--cream);box-shadow:var(--shadow);aspect-ratio:1;object-fit:cover}
+.checks{list-style:none;margin:20px 0 28px}
+.checks li{padding:8px 0 8px 34px;position:relative;font-weight:500}
+.checks li::before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;background:var(--amber);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+
+/* Shop */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:30px}
+.chip{border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 18px;font-weight:600;font-size:.9rem;transition:all .2s}
+.chip:hover{border-color:var(--amber)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.toolbar select{margin-left:auto;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;background:#fff;font:inherit;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 0 var(--line);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card .pic{position:relative;aspect-ratio:1;display:grid;place-items:center;font-size:5.2rem;overflow:hidden}
+.card .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;border-radius:999px;font-size:.72rem;font-weight:700;padding:5px 12px;letter-spacing:.04em}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-family:var(--serif);font-size:1.15rem;line-height:1.25}
+.card p{font-size:.9rem;color:var(--muted);flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:.7rem;font-weight:600;background:var(--cream);border-radius:999px;padding:3px 10px;color:var(--moss)}
+.card .buy{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.price{font-weight:700;font-size:1.2rem}
+.price small{display:block;font-weight:400;color:var(--muted);font-size:.7rem}
+.add{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:600;font-size:.88rem;transition:background .2s,transform .15s}
+.add:hover{background:var(--amber)}
+.add:active{transform:scale(.95)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px}
+
+/* Bundle */
+.bundle{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:24px;overflow:hidden;background:var(--moss);color:#fff;box-shadow:var(--shadow)}
+.bundle .l{padding:clamp(28px,5vw,60px)}
+.bundle .l h2{margin-top:8px}
+.bundle .l p{opacity:.9;margin-bottom:18px}
+.bundle ul{list-style:none;margin-bottom:24px}
+.bundle li{padding:6px 0;display:flex;gap:10px}
+.bundle li::before{content:"🐾"}
+.bundle .big{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
+.bundle .big b{font-family:var(--serif);font-size:2.6rem}
+.bundle .big s{opacity:.65}
+.bundle .big em{font-style:normal;background:var(--amber);border-radius:999px;font-size:.78rem;font-weight:700;padding:4px 12px}
+.bundle .r{background:url("https://nordenbrokerhof.de/img/kooikerhondje-mit-welpen-1100.webp") center/cover;min-height:320px}
+
+/* Schritte */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{background:#fff;border-radius:var(--radius);padding:30px;position:relative;box-shadow:0 1px 0 var(--line)}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--serif);font-size:3.2rem;color:var(--amber);line-height:1;display:block;margin-bottom:12px}
+.step h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.97rem}
+
+/* Hoftest / Steckbriefe */
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.profile{background:var(--ink-2);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.profile img{aspect-ratio:16/11;object-fit:cover;width:100%}
+.profile .in{padding:26px}
+.profile h3{font-family:var(--serif);font-size:1.6rem;margin:6px 0 12px}
+.profile dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:14px 0;font-size:.92rem}
+.profile dt{opacity:.6}
+.profile p{opacity:.88;font-size:.97rem}
+.profile blockquote{margin-top:16px;padding-left:14px;border-left:3px solid var(--amber);font-family:var(--serif);font-size:1.02rem}
+
+/* Finder */
+.finder{max-width:760px;margin-inline:auto;background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:clamp(26px,5vw,52px);text-align:center}
+.finder h3{font-family:var(--serif);font-size:1.6rem;margin-bottom:6px}
+.finder .prog{height:6px;background:var(--cream);border-radius:99px;margin:22px 0 28px;overflow:hidden}
+.finder .prog i{display:block;height:100%;background:var(--amber);width:0;transition:width .35s}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.opt{border:2px solid var(--line);background:var(--paper);border-radius:14px;padding:18px 12px;font-weight:600;transition:all .2s}
+.opt:hover{border-color:var(--amber);transform:translateY(-2px)}
+.opt span{display:block;font-size:1.9rem;margin-bottom:4px}
+.result .pic{width:150px;height:150px;border-radius:20px;margin:0 auto 14px;display:grid;place-items:center;font-size:4.6rem}
+.result .pic.img{overflow:hidden;padding:0}
+.result .pic.img img{width:100%;height:100%;object-fit:cover}
+.result p{color:var(--muted);margin:6px 0 20px}
+.result .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;margin-top:18px;font-size:.9rem}
+[hidden]{display:none!important}
+
+/* FAQ */
+.faq{max-width:820px;margin-inline:auto}
+details{background:#fff;border-radius:14px;margin-bottom:12px;box-shadow:0 1px 0 var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;color:var(--amber);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 22px;color:var(--muted)}
+
+/* Kontakt */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.contact h2{margin-bottom:12px}
+.contact p{opacity:.85;margin-bottom:24px;max-width:50ch}
+.addr{background:var(--ink-2);border-radius:var(--radius);padding:30px}
+.addr h3{font-family:var(--serif);font-size:1.35rem;margin:6px 0 14px}
+.addr ul{list-style:none;display:grid;gap:12px}
+.addr a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+
+/* Footer */
+footer{background:#141a16;color:#cfd6cd;padding:46px 0 30px}
+footer .top{display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer .brand img{height:56px}
+footer nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem}
+footer nav a{text-decoration:none;opacity:.8}
+footer nav a:hover{opacity:1}
+footer small{display:block;margin-top:22px;opacity:.6;font-size:.82rem}
+
+/* Warenkorb */
+.overlay{position:fixed;inset:0;background:rgba(10,14,12,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:90}
+.overlay.on{opacity:1;pointer-events:auto}
+aside.drawer{position:fixed;top:0;right:0;height:100%;width:min(430px,100%);background:var(--paper);z-index:100;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;box-shadow:-20px 0 50px -20px rgba(0,0,0,.5)}
+aside.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+.dh h3{font-family:var(--serif);font-size:1.4rem}
+.x{background:none;border:0;font-size:1.8rem;line-height:1}
+.ship{padding:16px 24px;background:#fff;border-bottom:1px solid var(--line);font-size:.88rem}
+.ship .bar{height:8px;border-radius:99px;background:var(--cream);margin-top:8px;overflow:hidden}
+.ship .bar i{display:block;height:100%;width:0;background:var(--moss);transition:width .35s}
+.items{flex:1;overflow:auto;padding:8px 24px}
+.item{display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.item .t{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;font-size:1.9rem}
+.item b{display:block;font-size:.95rem;line-height:1.3}
+.qty{display:inline-flex;align-items:center;gap:10px;margin-top:6px;font-size:.9rem}
+.qty button{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-weight:700}
+.item .p{font-weight:700}
+.df{padding:20px 24px;border-top:1px solid var(--line);background:#fff}
+.sum{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:6px}
+.sum.total{font-weight:700;font-size:1.15rem;margin:10px 0 14px}
+.df .btn{width:100%}
+.df small{display:block;margin-top:10px;color:var(--muted);font-size:.78rem;text-align:center}
+.cart-empty{padding:50px 10px;text-align:center;color:var(--muted)}
+
+/* Mobiler WhatsApp-Button */
+.fab{position:fixed;left:16px;bottom:16px;z-index:60;display:none;background:#25d366;color:#08320f;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 20px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:999px;font-size:.92rem;opacity:0;pointer-events:none;transition:all .3s;z-index:120}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* Scroll-Animation */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (max-width:1020px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .split,.contact,.bundle,.profiles{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .split .img img.float{right:10px}
+}
+@media (max-width:820px){
+  .nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;padding:18px 24px 24px;gap:14px;margin:0}
+  .nav ul.open{display:flex}
+  .burger{display:block;margin-left:auto}
+  .cart-btn{margin-left:0}
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .card .pic{font-size:3.8rem}
+  .toolbar select{margin-left:0}
+  .fab{display:inline-flex}
+}
+@media (max-width:480px){
+  .grid{grid-template-columns:1fr}
+  .brand span{display:none}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="announce"><strong id="annTxt">Kostenloser Versand</strong> · Direkt vom Familienhof in Emstek · Bestellung ganz einfach per WhatsApp</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Hundestark – zur Startseite">
+      <img src="https://nordenbrokerhof.de/img/logo-180.png" alt="Nordenbroker Hof Logo">
+      <span>Hundestark</span>
+    </a>
+    <ul id="menu">
+      <li><a href="#sortiment">Sortiment</a></li>
+      <li><a href="#paket">Hof-Paket</a></li>
+      <li><a href="#hoftest">Hoftest</a></li>
+      <li><a href="#finder">Spielzeug-Finder</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <button class="cart-btn" id="openCart" aria-label="Warenkorb öffnen">🛒 Warenkorb <span class="count" id="cartCount">0</span></button>
+    <button class="burger" id="burger" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Vom Nordenbroker Hof</span>
+    <h1>Hundespielzeug, das <em>wirklich</em> hält, was Hunde versprechen.</h1>
+    <p class="lead">Auf unserem Familienhof testen Amy und Antje jedes Spielzeug im echten Hundealltag. Was bei ihnen besteht, landet bei Hundestark im Sortiment.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#sortiment">Spielzeug entdecken</a>
+      <a class="btn btn-ghost" href="#finder">Welches passt zu meinem Hund?</a>
+    </div>
+    <div class="proof">
+      <span>Auf dem Hof getestet</span>
+      <span>Bestellen per WhatsApp</span>
+      <span>Persönlich statt anonym</span>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>2</b><span>Testhündinnen auf vier Pfoten</span></div>
+    <div class="stat"><b>100%</b><span>Transparenz bei jeder Bestellung</span></div>
+    <div class="stat"><b>24/7</b><span>Familienanschluss auf dem Hof</span></div>
+    <div class="stat"><b>1:1</b><span>Persönlicher Kontakt statt Formular</span></div>
+  </div>
+</div>
+
+<!-- PHILOSOPHIE -->
+<section id="hof">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">Unsere Philosophie</span>
+      <h2>Spielzeug von Hundemenschen, nicht aus dem Katalog.</h2>
+      <p>Wer einmal erlebt hat, wie ein Appenzeller Sennenhund ein Spielzeug in Rekordzeit auseinandernimmt, weiß: Nicht alles, was niedlich aussieht, ist auch für Hunde gemacht. Deshalb nehmen wir nur ins Sortiment, was unsere eigenen Hunde im Hofalltag überzeugt.</p>
+      <ul class="checks">
+        <li>Von Amy und Antje im Alltag getestet</li>
+        <li>Für kleine, mittlere und große Hunde</li>
+        <li>Persönliche Beratung direkt vom Hof</li>
+        <li>Unkomplizierte Bestellung ohne Konto und Formular</li>
+      </ul>
+      <a class="btn btn-dark" href="#sortiment">Zum Sortiment</a>
+    </div>
+    <div class="img rv">
+      <img class="main" src="https://nordenbrokerhof.de/img/appenzeller-tor-640.webp" alt="Appenzeller Sennenhündin auf der Wiese des Nordenbroker Hofs" loading="lazy">
+      <img class="float" src="https://nordenbrokerhof.de/img/hof-luftbild-480.webp" alt="Luftaufnahme des Nordenbroker Hofs" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SORTIMENT -->
+<section id="sortiment" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Das Sortiment</span>
+      <h2>Für jeden Hund das richtige Spiel.</h2>
+      <p>Kauen, Apportieren, Ziehen oder Knobeln: Filtern Sie nach Spielart und Hundegröße.</p>
+    </div>
+    <div class="toolbar" id="toolbar">
+      <button class="chip on" data-style="alle">Alle</button>
+      <button class="chip" data-style="kauen">Kauen</button>
+      <button class="chip" data-style="apportieren">Apportieren</button>
+      <button class="chip" data-style="ziehen">Ziehen</button>
+      <button class="chip" data-style="denken">Knobeln</button>
+      <select id="sizeSel" aria-label="Nach Hundegröße filtern">
+        <option value="alle">Alle Größen</option>
+        <option value="s">Kleine Hunde (bis 10 kg)</option>
+        <option value="m">Mittlere Hunde (10–25 kg)</option>
+        <option value="g">Große Hunde (ab 25 kg)</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section id="paket">
+  <div class="wrap">
+    <div class="bundle rv">
+      <div class="l">
+        <span class="eyebrow">Unser Tipp</span>
+        <h2>Das Hof-Starterpaket</h2>
+        <p>Die drei Klassiker, mit denen Amy und Antje jeden Tag spielen: ein Zerrseil, ein Gummiknochen und ein Ballset.</p>
+        <ul>
+          <li>Zerrseil „Strohballen“</li>
+          <li>Gummiknochen „Hofhund“</li>
+          <li>Ballset „Wiese“ (3 Stück)</li>
+        </ul>
+        <div class="big"><b id="bundlePrice"></b><s id="bundleOld"></s><em id="bundleSave"></em></div>
+        <button class="btn btn-primary" id="addBundle">Paket in den Warenkorb</button>
+      </div>
+      <div class="r" role="img" aria-label="Kooikerhondje Hündin mit Welpen auf der Wiese"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHRITTE -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Transparenz &amp; Vertrauen</span>
+      <h2>Der Weg zu Ihrem Hundespielzeug</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Auswählen</h3><p>Legen Sie Ihre Favoriten in den Warenkorb. Unsicher? Der Spielzeug-Finder hilft in drei Fragen.</p></div>
+      <div class="step rv"><h3>Per WhatsApp bestätigen</h3><p>Ein Klick öffnet WhatsApp mit Ihrer fertigen Bestellung. Sie ergänzen nur noch Ihre Lieferadresse.</p></div>
+      <div class="step rv"><h3>Lieferung &amp; Freude</h3><p>Wir bestätigen persönlich, packen auf dem Hof und schicken Ihr Paket los.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOFTEST -->
+<section id="hoftest" class="dark">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Der Hoftest</span>
+      <h2>Unsere zwei strengsten Kritikerinnen</h2>
+      <p>Jedes Spielzeug muss durch die Pfoten von Amy und Antje. Zwei Hunde, zwei Spielstile, null Gnade.</p>
+    </div>
+    <div class="profiles">
+      <article class="profile rv">
+        <img src="https://nordenbrokerhof.de/img/amy-3-800.webp" alt="Amy von Tessin, Appenzeller Sennenhündin in Schwarz-Tricolor" loading="lazy">
+        <div class="in">
+          <span class="eyebrow">Testerin für die Großen</span>
+          <h3>Amy von Tessin</h3>
+          <dl><dt>Rasse</dt><dd>Appenzeller Sennenhund</dd><dt>Gewicht</dt><dd>23 kg</dd><dt>Spielstil</dt><dd>Sportlich, lernwillig, hütet alles</dd></dl>
+          <p>Amy ist der Sicherheitsdienst des Hofs. Ihrem Hüteinstinkt entgeht nichts, und sie liebt Beschäftigung mit Köpfchen.</p>
+          <blockquote>Hält ein Spielzeug bei Amy, hält es bei den meisten Hunden.</blockquote>
+        </div>
+      </article>
+      <article class="profile rv">
+        <img src="https://nordenbrokerhof.de/img/antje-3-800.webp" alt="Antje, Kooikerhondje, steht im Wasser" loading="lazy">
+        <div class="in">
+          <span class="eyebrow">Testerin für die Kleinen</span>
+          <h3>Antje</h3>
+          <dl><dt>Rasse</dt><dd>Nederlandse Kooikerhondje</dd><dt>Gewicht</dt><dd>10 kg</dd><dt>Spielstil</dt><dd>Freundlich, wasserverliebt, immer dabei</dd></dl>
+          <p>Antje ist unser Sonnenschein, ein handliches Energiebündel, das Wasser, Bälle und Gesellschaft liebt.</p>
+          <blockquote>Wenn Antje schwanzwedelnd davontrabt, ist das Spielzeug ein Treffer.</blockquote>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FINDER -->
+<section id="finder">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Interaktive Analyse</span>
+      <h2>Welches Spielzeug passt zu Ihrem Hund?</h2>
+      <p>Drei kurze Fragen, ein klarer Vorschlag.</p>
+    </div>
+    <div class="finder rv">
+      <div id="fStart">
+        <h3>Bereit für Ihr Match?</h3>
+        <p style="color:var(--muted);margin-bottom:22px">Ehrlich währt am längsten: So finden wir das Spielzeug, an dem Ihr Hund wirklich Spaß hat.</p>
+        <button class="btn btn-primary" id="fGo">Finder starten</button>
+      </div>
+      <div id="fQ" hidden>
+        <small id="fStep" style="color:var(--muted);font-weight:600"></small>
+        <div class="prog"><i id="fBar"></i></div>
+        <h3 id="fTitle"></h3>
+        <div class="opts" id="fOpts" style="margin-top:22px"></div>
+      </div>
+      <div id="fR" class="result" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Gut zu wissen</span>
+      <h2>Häufige Fragen</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Wie bestelle ich bei Hundestark?</summary><p>Legen Sie Ihre Produkte in den Warenkorb und klicken Sie auf „Per WhatsApp bestellen“. Ihr WhatsApp öffnet sich mit einer fertigen Nachricht. Sie senden sie ab, nennen Ihre Lieferadresse, und wir bestätigen Ihre Bestellung persönlich.</p></details>
+      <details><summary>Wie zahle ich?</summary><p>Die Zahlungsart besprechen wir bei der Bestellbestätigung direkt mit Ihnen per WhatsApp. So bleibt alles persönlich und transparent.</p></details>
+      <details><summary>Wie schnell wird geliefert?</summary><p>Wir packen jede Bestellung selbst auf dem Hof. Den voraussichtlichen Versandtermin nennen wir Ihnen in der Bestätigung.</p></details>
+      <details><summary>Woher weiß ich, welche Größe passt?</summary><p>Nutzen Sie den Spielzeug-Finder oder fragen Sie uns einfach per WhatsApp. Nennen Sie Rasse und Gewicht Ihres Hundes, und wir empfehlen das passende Spielzeug.</p></details>
+      <details><summary>Wie lange hält ein Spielzeug?</summary><p>Das hängt vom Hund ab. Wir empfehlen, Spielzeug immer unter Aufsicht zu nutzen und regelmäßig zu kontrollieren. Beschädigte Teile gehören aussortiert.</p></details>
+      <details><summary>Kann ich auch Welpen beim Nordenbroker Hof anfragen?</summary><p>Ja, auf <a href="https://nordenbrokerhof.de" target="_blank" rel="noopener">nordenbrokerhof.de</a> finden Sie unsere Appenzeller Sennenhunde und Kooikerhondje Welpen.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="dark">
+  <div class="wrap contact">
+    <div class="rv">
+      <span class="eyebrow">Persönlich statt Formular</span>
+      <h2>Lernen wir uns kennen.</h2>
+      <p>Wir verzichten auf unpersönliche Kontaktformulare. Schreiben Sie uns direkt per WhatsApp: Welcher Hund, welches Spielzeug, welche Fragen?</p>
+      <a class="btn btn-wa" id="waDirect" href="#" target="_blank" rel="noopener">💬 WhatsApp-Chat öffnen</a>
+    </div>
+    <div class="addr rv">
+      <span class="eyebrow">So erreichen Sie uns</span>
+      <h3>Nordenbroker Hof</h3>
+      <ul>
+        <li>Adina Maier<br>Nordenbroker Straße 10<br>49685 Emstek-Bühren</li>
+        <li><a href="tel:+491604461997">0160 4461997</a> (Telefon &amp; WhatsApp)</li>
+        <li><a href="mailto:maier@nordenbrokerhof.de">maier@nordenbrokerhof.de</a></li>
+        <li><a href="https://instagram.com/nordenbroker_hof" target="_blank" rel="noopener">@nordenbroker_hof auf Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#top"><img src="https://nordenbrokerhof.de/img/logo-180.png" alt="Nordenbroker Hof Logo"><span>Hundestark</span></a>
+      <nav>
+        <a href="#sortiment">Sortiment</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://nordenbrokerhof.de/impressum.html" target="_blank" rel="noopener">Impressum</a>
+        <a href="https://nordenbrokerhof.de/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+        <a href="https://nordenbrokerhof.de" target="_blank" rel="noopener">Nordenbroker Hof</a>
+        <a href="https://instagram.com/nordenbroker_hof" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <small>Hundestark ist ein Angebot des Nordenbroker Hofs · Emstek, Niedersachsen · Alle Preise inkl. MwSt., zzgl. Versand · © 2026 Nordenbroker Hof</small>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener">💬 Frage? WhatsApp</a>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Warenkorb" aria-hidden="true">
+  <div class="dh"><h3>Ihr Warenkorb</h3><button class="x" id="closeCart" aria-label="Schließen">×</button></div>
+  <div class="ship" id="ship"></div>
+  <div class="items" id="items"></div>
+  <div class="df" id="df">
+    <div class="sum"><span>Zwischensumme</span><span id="sub"></span></div>
+    <div class="sum"><span>Versand</span><span id="shipCost"></span></div>
+    <div class="sum total"><span>Gesamt</span><span id="total"></span></div>
+    <a class="btn btn-wa" id="waOrder" href="#" target="_blank" rel="noopener">💬 Per WhatsApp bestellen</a>
+    <small>Sie senden uns Ihre Bestellung per WhatsApp. Zahlung und Versand klären wir persönlich.</small>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ============================================================
+   KONFIGURATION – hier Preise, Produkte und Versand anpassen
+   ============================================================ */
+const WHATSAPP = "491604461997";   // WhatsApp-Nummer des Hofs
+const FREE_SHIPPING = 40;          // Gratis-Versand ab (EUR) – bitte anpassen
+const SHIPPING = 4.90;             // Versandkosten darunter (EUR) – bitte anpassen
+const BUNDLE_IDS = ["zerrseil","gummiknochen","ballset"];
+const BUNDLE_PRICE = 27.90;        // Preis des Hof-Starterpakets
+
+/* Produktfotos: bei "img" eine Bild-URL eintragen, dann ersetzt das Foto das Symbol.
+   Preise und Texte sind Platzhalter und müssen durch Ihre echten Daten ersetzt werden. */
+const PRODUCTS = [
+  {id:"zerrseil",     name:"Zerrseil „Strohballen“",      emoji:"🪢", tint:"#efe0c2", price:12.90, sizes:["m","g"],     styles:["ziehen"],                places:["draussen","drinnen"], badge:"Amys Favorit",   img:"", desc:"Robustes Baumwollseil für wilde Zerrspiele. Mit zwei Griffknoten für Mensch und Hund."},
+  {id:"gummiknochen", name:"Gummiknochen „Hofhund“",       emoji:"🦴", tint:"#e7d3bd", price:9.90,  sizes:["s","m","g"], styles:["kauen"],                 places:["drinnen","draussen"], badge:"",               img:"", desc:"Fester Kauspaß mit Rillen für die Zahnpflege. Rutschfest und gut zu greifen."},
+  {id:"ballset",      name:"Ballset „Wiese“ (3 Stück)",    emoji:"🎾", tint:"#dfe8c8", price:7.90,  sizes:["s","m","g"], styles:["apportieren"],           places:["draussen"],           badge:"Bestpreis",      img:"", desc:"Drei leuchtende Bälle, die man auf der Wiese nie aus den Augen verliert."},
+  {id:"schnueffel",   name:"Schnüffelteppich „Wiesenpfad“", emoji:"🌿", tint:"#d6e4d0", price:19.90, sizes:["s","m","g"], styles:["denken"],                places:["drinnen"],            badge:"Gegen Langeweile",img:"", desc:"Leckerlis im Fleece verstecken und suchen lassen. Fordert die Nase und beruhigt."},
+  {id:"quietschgans", name:"Quietsch-Gans „Hofbewohner“",  emoji:"🪿", tint:"#f1e7d8", price:8.90,  sizes:["s","m"],     styles:["ziehen","apportieren"],  places:["drinnen"],            badge:"Neu",            img:"", desc:"Weicher Plüsch mit Quietscher. Ideal zum Tragen, Schütteln und Kuscheln."},
+  {id:"treibball",    name:"Treibball „Hütehund“",         emoji:"⚽", tint:"#d9dfe6", price:16.90, sizes:["m","g"],     styles:["apportieren","denken"],  places:["draussen"],           badge:"Für Hüter",      img:"", desc:"Großer, stabiler Ball zum Schieben und Treiben. Perfekt für Hütehunde wie den Appenzeller."},
+  {id:"futterball",   name:"Futterball „Knobelkopf“",      emoji:"🧩", tint:"#ecdcc6", price:14.90, sizes:["s","m","g"], styles:["denken"],                places:["drinnen","draussen"], badge:"",               img:"", desc:"Gefüllt mit Trockenfutter oder Leckerlis. Der Hund muss rollen, schieben und denken."},
+  {id:"wasserdummy",  name:"Wasserdummy „Teichpirat“",     emoji:"🏊", tint:"#cfe3ea", price:11.90, sizes:["s","m","g"], styles:["apportieren"],           places:["wasser","draussen"],  badge:"Antjes Favorit", img:"", desc:"Schwimmfähiger Apportierdummy mit auffälliger Farbe. Für Teich, See und Strand."}
+];
+
+/* ============================================================ */
+const $ = s => document.querySelector(s);
+const eur = n => n.toLocaleString("de-DE",{style:"currency",currency:"EUR"});
+const byId = id => PRODUCTS.find(p => p.id === id);
+const STYLE_LABEL = {kauen:"Kauen",apportieren:"Apportieren",ziehen:"Ziehen",denken:"Knobeln"};
+const SIZE_LABEL = {s:"Klein",m:"Mittel",g:"Groß"};
+
+/* Warenkorb */
+let cart = {};
+try{ cart = JSON.parse(localStorage.getItem("hundestark-cart")||"{}") || {}; }catch(e){ cart = {}; }
+const save = () => { try{ localStorage.setItem("hundestark-cart", JSON.stringify(cart)); }catch(e){} };
+
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(toast.t); toast.t = setTimeout(()=>t.classList.remove("on"),1900);
+}
+function visual(p,cls){ return p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : ""; }
+
+/* Produktgrid */
+let fStyle = "alle", fSize = "alle";
+function renderGrid(){
+  const list = PRODUCTS.filter(p => (fStyle==="alle"||p.styles.includes(fStyle)) && (fSize==="alle"||p.sizes.includes(fSize)));
+  $("#grid").innerHTML = list.length ? list.map(p => `
+    <article class="card">
+      <div class="pic" style="background:${p.tint}">${p.img?visual(p):p.emoji}${p.badge?`<span class="badge">${p.badge}</span>`:""}</div>
+      <div class="body">
+        <div class="tags">${p.styles.map(s=>`<span class="tag">${STYLE_LABEL[s]}</span>`).join("")}${p.sizes.map(s=>`<span class="tag">${SIZE_LABEL[s]}</span>`).join("")}</div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="buy">
+          <div class="price">${eur(p.price)}<small>inkl. MwSt.</small></div>
+          <button class="add" data-add="${p.id}">In den Warenkorb</button>
+        </div>
+      </div>
+    </article>`).join("") : `<p class="empty">Für diese Kombination haben wir gerade nichts. Fragen Sie uns per WhatsApp, wir finden etwas.</p>`;
+}
+$("#toolbar").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));
+  b.classList.add("on"); fStyle = b.dataset.style; renderGrid();
+});
+$("#sizeSel").addEventListener("change", e => { fSize = e.target.value; renderGrid(); });
+$("#grid").addEventListener("click", e => {
+  const b = e.target.closest("[data-add]"); if(b) add(b.dataset.add);
+});
+
+/* Warenkorb-Logik */
+function add(id,n=1){
+  cart[id] = (cart[id]||0)+n; save(); renderCart();
+  toast(`${byId(id).name} liegt im Warenkorb`);
+}
+function totals(){
+  const sub = Object.entries(cart).reduce((s,[id,q]) => s + byId(id).price*q, 0);
+  const ship = sub===0 ? 0 : (sub>=FREE_SHIPPING ? 0 : SHIPPING);
+  return {sub,ship,total:sub+ship};
+}
+function waLink(text){ return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`; }
+function renderCart(){
+  const ids = Object.keys(cart).filter(id => byId(id) && cart[id]>0);
+  const count = ids.reduce((s,id)=>s+cart[id],0);
+  $("#cartCount").textContent = count;
+  const {sub,ship,total} = totals();
+  if(!ids.length){
+    $("#items").innerHTML = `<div class="cart-empty">🐾<br><br>Ihr Warenkorb ist noch leer.<br>Stöbern Sie im Sortiment, die Hunde warten schon.</div>`;
+    $("#df").hidden = true;
+  } else {
+    $("#df").hidden = false;
+    $("#items").innerHTML = ids.map(id => { const p = byId(id); return `
+      <div class="item">
+        <div class="t" style="background:${p.tint}">${p.emoji}</div>
+        <div><b>${p.name}</b>
+          <div class="qty"><button data-dec="${id}" aria-label="Weniger">−</button><span>${cart[id]}</span><button data-inc="${id}" aria-label="Mehr">+</button></div>
+        </div>
+        <div class="p">${eur(p.price*cart[id])}</div>
+      </div>`; }).join("");
+    $("#sub").textContent = eur(sub);
+    $("#shipCost").textContent = ship===0 ? "Gratis" : eur(ship);
+    $("#total").textContent = eur(total);
+    const lines = ids.map(id => `${cart[id]}x ${byId(id).name} (${eur(byId(id).price*cart[id])})`).join("\n");
+    $("#waOrder").href = waLink(`Hallo Nordenbroker Hof, ich möchte gerne bei Hundestark bestellen:\n\n${lines}\n\nZwischensumme: ${eur(sub)}\nVersand: ${ship===0?"Gratis":eur(ship)}\nGesamt: ${eur(total)}\n\nMeine Lieferadresse:\n`);
+  }
+  const rest = FREE_SHIPPING - sub;
+  $("#ship").innerHTML = (sub===0 || rest>0)
+    ? `Noch <b>${eur(Math.max(rest,0))}</b> bis zum kostenlosen Versand<div class="bar"><i style="width:${Math.min(100,sub/FREE_SHIPPING*100)}%"></i></div>`
+    : `🎉 <b>Kostenloser Versand</b> ist freigeschaltet!<div class="bar"><i style="width:100%"></i></div>`;
+}
+$("#items").addEventListener("click", e => {
+  const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]");
+  if(inc){ cart[inc.dataset.inc]++; }
+  if(dec){ const id = dec.dataset.dec; cart[id]--; if(cart[id]<=0) delete cart[id]; }
+  if(inc||dec){ save(); renderCart(); }
+});
+function openCart(){ $("#drawer").classList.add("on"); $("#overlay").classList.add("on"); $("#drawer").setAttribute("aria-hidden","false"); }
+function closeCart(){ $("#drawer").classList.remove("on"); $("#overlay").classList.remove("on"); $("#drawer").setAttribute("aria-hidden","true"); }
+$("#openCart").onclick = openCart; $("#closeCart").onclick = closeCart; $("#overlay").onclick = closeCart;
+document.addEventListener("keydown", e => { if(e.key==="Escape") closeCart(); });
+
+/* Bundle */
+(function(){
+  const old = BUNDLE_IDS.reduce((s,id)=>s+byId(id).price,0);
+  $("#bundlePrice").textContent = eur(BUNDLE_PRICE);
+  $("#bundleOld").textContent = eur(old);
+  const save_ = old - BUNDLE_PRICE;
+  $("#bundleSave").textContent = save_>0 ? `Sie sparen ${eur(save_)}` : "Paketpreis";
+  $("#addBundle").onclick = () => {
+    BUNDLE_IDS.forEach(id => { cart[id] = (cart[id]||0)+1; });
+    save(); renderCart(); toast("Hof-Starterpaket liegt im Warenkorb"); openCart();
+  };
+})();
+
+/* Spielzeug-Finder */
+const QUESTIONS = [
+  {key:"size", title:"Wie groß ist Ihr Hund?", opts:[["s","🐕","Klein (bis 10 kg)"],["m","🐕‍🦺","Mittel (10–25 kg)"],["g","🦮","Groß (ab 25 kg)"]]},
+  {key:"style", title:"Was liebt Ihr Hund am meisten?", opts:[["kauen","🦴","Kauen"],["apportieren","🎾","Apportieren"],["ziehen","🪢","Zerren"],["denken","🧩","Knobeln"]]},
+  {key:"place", title:"Wo wird am liebsten gespielt?", opts:[["drinnen","🏠","Drinnen"],["draussen","🌳","Draußen"],["wasser","💦","Im Wasser"]]}
+];
+let qi = 0, ans = {};
+function showQ(){
+  const q = QUESTIONS[qi];
+  $("#fStep").textContent = `Frage ${qi+1} / ${QUESTIONS.length}`;
+  $("#fBar").style.width = `${(qi/QUESTIONS.length)*100}%`;
+  $("#fTitle").textContent = q.title;
+  $("#fOpts").innerHTML = q.opts.map(o => `<button class="opt" data-v="${o[0]}"><span>${o[1]}</span>${o[2]}</button>`).join("");
+}
+function showResult(){
+  const scored = PRODUCTS.map(p => ({p, s:(p.sizes.includes(ans.size)?2:0)+(p.styles.includes(ans.style)?3:0)+(p.places.includes(ans.place)?1:0)})).sort((a,b)=>b.s-a.s);
+  const p = scored[0].p;
+  $("#fQ").hidden = true; $("#fR").hidden = false;
+  $("#fR").innerHTML = `
+    <span class="eyebrow">Ihr perfektes Match</span>
+    <div class="pic ${p.img?"img":""}" style="background:${p.tint};margin-top:14px">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.emoji}</div>
+    <h3>${p.name}</h3>
+    <p>${p.desc}</p>
+    <div class="row">
+      <button class="btn btn-primary" id="rAdd">Für ${eur(p.price)} in den Warenkorb</button>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="${waLink(`Hallo Nordenbroker Hof, der Spielzeug-Finder hat mir „${p.name}“ empfohlen. Meine Frage:`)}">Frage per WhatsApp</a>
+    </div>
+    <button class="linkbtn" id="rAgain">Finder wiederholen</button>`;
+  $("#rAdd").onclick = () => add(p.id);
+  $("#rAgain").onclick = () => { qi = 0; ans = {}; $("#fR").hidden = true; $("#fStart").hidden = false; };
+}
+$("#fGo").onclick = () => { qi = 0; ans = {}; $("#fStart").hidden = true; $("#fQ").hidden = false; showQ(); };
+$("#fOpts").addEventListener("click", e => {
+  const b = e.target.closest(".opt"); if(!b) return;
+  ans[QUESTIONS[qi].key] = b.dataset.v; qi++;
+  qi < QUESTIONS.length ? showQ() : showResult();
+});
+
+/* Sonstiges */
+$("#annTxt").textContent = `Kostenloser Versand ab ${eur(FREE_SHIPPING)}`;
+const direct = waLink("Hallo Nordenbroker Hof, ich habe eine Frage zu Hundestark:");
+$("#waDirect").href = direct; $("#fab").href = direct;
+$("#burger").onclick = () => $("#menu").classList.toggle("open");
+$("#menu").addEventListener("click", e => { if(e.target.tagName==="A") $("#menu").classList.remove("open"); });
+
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(en => { if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }), {threshold:.12}) : null;
+document.querySelectorAll(".rv").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+
+renderGrid(); renderCart();
+</script>
+</body>
+</html>
