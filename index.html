@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hundestark – Hundespielzeug</title>
-<meta name="description" content="Hundestark: ein Hundespielzeug, sorgfältig ausgewählt. Direkt bestellen, Zahlung auf Rechnung, per PayPal oder Vorkasse.">
+<title>Futterente – Futterspender für Hunde | Hundestark</title>
+<meta name="description" content="Die Futterente: ein Futterspender für Hunde, der aus der Mahlzeit ein Spiel macht. Direkt bestellen, Zahlung auf Rechnung, per PayPal oder Vorkasse.">
 <meta name="theme-color" content="#1c231f">
-<meta property="og:title" content="Hundestark – Hundespielzeug">
+<meta property="og:title" content="Futterente – Futterspender für Hunde">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c231f'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Georgia' text-anchor='middle' fill='%23d8832f'%3EH%3C/text%3E%3C/svg%3E">
@@ -144,14 +144,14 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 <div class="hero"><div class="wrap">
   <span class="eyebrow" style="color:#e9a35c">Hundestark</span>
   <h1 id="hTag"></h1>
-  <p>Ein einziges Produkt, mit Sorgfalt ausgewählt und direkt versendet.</p>
+  <p>Die Futterente macht aus der Mahlzeit ein Spiel. Der Hund drückt, dreht und holt sich sein Futter selbst.</p>
   <div class="cta"><a class="btn btn-p" href="#produkt">Zum Produkt</a><a class="btn btn-o" href="#bestellung">Direkt bestellen</a></div>
 </div></div>
 
 <section id="produkt"><div class="wrap pd">
   <div class="rv"><div class="gal-main" id="gMain"></div><div class="thumbs" id="thumbs"></div></div>
   <div class="buy rv">
-    <span class="eyebrow">Hundespielzeug</span>
+    <span class="eyebrow">Futterspender für Hunde</span>
     <h2 id="pName"></h2>
     <div class="price" id="pPrice"></div>
     <p class="tax">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. zzgl. 2,99 € Versand.</p>
@@ -169,9 +169,9 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
 </div></section>
 
 <section class="alt"><div class="wrap split">
-  <div class="img rv" role="img" aria-label="Produkt im Einsatz"></div>
+  <div class="img rv" role="img" aria-label="Futterente im Einsatz"></div>
   <div class="rv"><span class="eyebrow">Warum nur ein Produkt</span><h2>Lieber eines richtig gut.</h2>
-  <p>Hundestark verkauft kein Sortiment, sondern ein einziges Spielzeug. Das erlaubt es, jedes Detail zu prüfen und bei Fragen persönlich zu antworten.</p>
+  <p>Hundestark verkauft kein Sortiment, sondern nur die Futterente. Das erlaubt es, jedes Detail zu prüfen und bei Fragen persönlich zu antworten.</p>
   <p>Bestellt wird ohne Kundenkonto, bezahlt wird so, wie es Ihnen passt.</p></div>
 </div></section>
 
@@ -227,6 +227,7 @@ dialog::backdrop{background:rgba(10,14,12,.6)}
   <span class="eyebrow">Fragen</span><h2>Häufige Fragen</h2>
   <details><summary>Wie läuft die Bestellung ab?</summary><p>Sie füllen das Bestellformular aus und wählen die Zahlungsart. Danach erhalten Sie eine Bestätigung mit allen Angaben zur Zahlung.</p></details>
   <details><summary>Wann wird geliefert?</summary><p>Bei Rechnung und PayPal versenden wir nach der Bestätigung, bei Vorkasse nach Zahlungseingang. Den Versandtermin teilen wir Ihnen per E-Mail mit.</p></details>
+  <details><summary>Welches Futter passt in die Futterente?</summary><p>Trockenfutter und kleine Leckerlis. Das Futter muss so klein sein, dass es durch die Öffnung der Kammer fällt.</p></details>
   <details><summary>Kann ich die Bestellung zurückgeben?</summary><p>Ja, Sie haben 14 Tage Widerrufsrecht. Die Einzelheiten stehen in der Widerrufsbelehrung.</p></details>
   <details><summary>Gibt es Versand ins Ausland?</summary><p>Aktuell liefern wir nur innerhalb Deutschlands. Bei anderen Wünschen schreiben Sie uns kurz.</p></details>
 </div></section>
@@ -279,17 +280,18 @@ const CONFIG={
   PAYPAL_ME:"",                   // z. B. "AndyReiter" → Zahlungslink mit Betrag nach der Bestellung
   IBAN:"", ACCOUNT_HOLDER:"Andy Reiter", PAYMENT_DAYS:14
 };
-const PRODUCT={ // Platzhalter – bitte durch echte Produktdaten ersetzen
-  name:"Hundestark Zerrseil", price:14.90,
-  tagline:"Ein Spielzeug, das bleibt.",
-  short:"Robustes Zerrseil für gemeinsames Spiel. Gut zu greifen, leicht zu reinigen und für den Alltag gemacht.",
+const PRODUCT={
+  name:"Futterente", price:29.90,
+  tagline:"Fressen mit Köpfchen.",
+  short:"Der Futterspender in Entenform: Trockenfutter in die Kuppel füllen, Hebel mit der Pfote drücken, Futter holen. Gut gegen Langeweile und zu hastiges Fressen.",
   images:["img/produkt-1.jpg","img/produkt-2.jpg","img/produkt-3.jpg","img/produkt-4.jpg","img/produkt-5.jpg"],
-  variantLabel:"", variants:[],   // z. B. variantLabel:"Größe", variants:["S","M","L"]
+  variantLabel:"", variants:[],
   details:[
-    ["Beschreibung","<p>Hier steht die ausführliche Produktbeschreibung.</p>"],
-    ["Material &amp; Pflege","<ul><li>Material: bitte ergänzen</li><li>Pflege: bitte ergänzen</li></ul>"],
-    ["Maße &amp; Lieferumfang","<ul><li>Maße: bitte ergänzen</li><li>Lieferumfang: 1 Stück</li></ul>"],
-    ["Hinweis zur Nutzung","<p>Spielzeug nur unter Aufsicht verwenden und regelmäßig auf Beschädigungen prüfen.</p>"]
+    ["Beschreibung","<p>Die Futterente verwandelt die Mahlzeit in eine Aufgabe. Trockenfutter oder kleine Leckerlis kommen in die durchsichtige Kuppel. Der Hund drückt mit der Pfote auf den orangefarbenen Hebel und bringt so die Futterkammer in Bewegung. Das Futter fällt nur nach und nach heraus. So frisst der Hund langsamer und ist dabei beschäftigt.</p>"],
+    ["So funktioniert es","<ul><li>1. Futter oder Leckerlis in die Kuppel füllen</li><li>2. Der Hund drückt mit der Pfote auf den Hebel</li><li>3. Die Kammer dreht sich, das Futter fällt heraus</li></ul>"],
+    ["Pflege","<p>Vor der ersten Nutzung und danach regelmäßig mit warmem Wasser und mildem Spülmittel reinigen und gut trocknen lassen.</p>"],
+    ["Lieferumfang","<ul><li>1 × Futterente</li></ul>"],
+    ["Hinweis zur Nutzung","<p>Nur unter Aufsicht verwenden und regelmäßig auf Beschädigungen prüfen. Beschädigte Teile nicht weiter nutzen. Das enthaltene Futter von der Tagesration abziehen.</p>"]
   ]
 };
 /* ========================= */
